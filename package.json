@@ -1,0 +1,24 @@
+{
+  "name": "condominio-api",
+  "version": "1.0.0",
+  "description": "API CRUDL do Sistema de Gestão de Condomínios (Fastify + TypeScript + Drizzle + MySQL)",
+  "main": "dist/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.45.2",
+    "fastify": "^5.8.5",
+    "mysql2": "^3.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "drizzle-kit": "^0.31.4",
+    "tsx": "^4.19.0",
+    "typescript": "^5.9.0"
+  }
+}
