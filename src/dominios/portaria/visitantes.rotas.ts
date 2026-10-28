@@ -1,9 +1,10 @@
 import { FastifyInstance } from 'fastify'
 import { randomUUID } from 'crypto'
 import { eq } from 'drizzle-orm'
-import { db } from '../db'
-import { visitantes } from '../db/schema'
-import { Corpo, validarVisitante } from '../validacoes'
+import { db } from '../../db'
+import { visitantes } from './visitantes.schema'
+import { Corpo } from '../../compartilhado/validacoes'
+import { validarVisitante } from './visitantes.validacoes'
 
 // Molde dos dados que o cliente envia (o "?" significa "pode não vir", usado no PATCH)
 type DadosVisitante = { nome?: string; documento?: string; telefone?: string }

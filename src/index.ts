@@ -1,6 +1,6 @@
 import Fastify from 'fastify'
-import { registrarRotasVisitantes } from './routes/visitantes'
-import { registrarRotasAreasComuns } from './routes/areasComuns'
+import { registrarRotasPortaria } from './dominios/portaria'
+import { registrarRotasAreas } from './dominios/areas'
 
 // Cria a aplicação (logger: true = mostra no terminal cada pedido que chega)
 const app = Fastify({ logger: true })
@@ -13,9 +13,9 @@ app.get('/', async () => {
   }
 })
 
-// Cria as rotas de cada recurso
-registrarRotasVisitantes(app)
-registrarRotasAreasComuns(app)
+// Registra as rotas de cada domínio
+registrarRotasPortaria(app)
+registrarRotasAreas(app)
 
 // Liga o servidor
 const start = async () => {

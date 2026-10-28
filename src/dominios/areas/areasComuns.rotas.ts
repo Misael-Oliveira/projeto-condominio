@@ -1,9 +1,10 @@
 import { FastifyInstance } from 'fastify'
 import { randomUUID } from 'crypto'
 import { eq } from 'drizzle-orm'
-import { db } from '../db'
-import { areasComuns } from '../db/schema'
-import { Corpo, validarAreaComum } from '../validacoes'
+import { db } from '../../db'
+import { areasComuns } from './areasComuns.schema'
+import { Corpo } from '../../compartilhado/validacoes'
+import { validarAreaComum } from './areasComuns.validacoes'
 
 // Molde dos dados que o cliente envia (o "?" significa "pode não vir")
 type DadosArea = { nome?: string; capacidade?: number; regras?: string; status?: string }
