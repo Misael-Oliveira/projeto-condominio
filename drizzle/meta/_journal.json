@@ -8,6 +8,13 @@
       "when": 1793225094517,
       "tag": "0000_great_hemingway",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1793294787273,
+      "tag": "0001_wealthy_annihilus",
+      "breakpoints": true
     }
   ]
 }

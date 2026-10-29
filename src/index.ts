@@ -1,6 +1,7 @@
 import Fastify from 'fastify'
 import { registrarRotasPortaria } from './dominios/portaria'
 import { registrarRotasAreas } from './dominios/areas'
+import { registrarRotasAuth } from './auth/auth.rotas'
 
 // Cria a aplicação (logger: true = mostra no terminal cada pedido que chega)
 const app = Fastify({ logger: true })
@@ -9,11 +10,12 @@ const app = Fastify({ logger: true })
 app.get('/', async () => {
   return {
     message: 'API do Sistema de Gestão de Condomínios',
-    recursos: ['/visitantes', '/areas-comuns']
+    recursos: ['/visitantes', '/areas-comuns', '/me']
   }
 })
 
 // Registra as rotas de cada domínio
+registrarRotasAuth(app)
 registrarRotasPortaria(app)
 registrarRotasAreas(app)
 
